@@ -41,3 +41,8 @@ app-example
 # generated native folders
 /ios
 /android
+
+# IDE
+.history/
+.vscode/
+.DS_Store
