@@ -5,25 +5,36 @@
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+
+const Palette = {
+  milkCoffee: '#F5F5F0', // Creamy Milk
+  darkCoffee: '#4A3B32', // Dark Coffee
+  lightCoffee: '#D7CCC8', // Light Coffee
+  mediumCoffee: '#8D6E63', // Medium Coffee
+  grey: '#BCAAA4',
+  white: '#FFFFFF',
+  black: '#000000',
+};
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: Palette.darkCoffee,
+    background: Palette.milkCoffee,
+    tint: Palette.darkCoffee,
+    icon: Palette.mediumCoffee,
+    tabIconDefault: Palette.grey,
+    tabIconSelected: Palette.darkCoffee,
+    // Add palette for direct access if needed, though usually we use the semantic names above
+    ...Palette,
   },
   dark: {
     text: '#ECEDEE',
     background: '#151718',
-    tint: tintColorDark,
+    tint: Palette.lightCoffee,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    tabIconSelected: Palette.lightCoffee,
+    ...Palette,
   },
 };
 

@@ -8,7 +8,15 @@ content: [
 ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'milk-coffee': 'var(--color-milk-coffee)',
+        'dark-coffee': 'var(--color-dark-coffee)',
+        'light-coffee': 'var(--color-light-coffee)',
+        'medium-coffee': 'var(--color-medium-coffee)',
+        'grey': 'var(--color-grey)',
+      },
+    },
   },
   plugins: [],
 }
