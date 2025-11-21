@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-milk-coffee: #F5F5F0;
+    --color-dark-coffee: #4A3B32;
+    --color-light-coffee: #D7CCC8;
+    --color-medium-coffee: #8D6E63;
+    --color-grey: #BCAAA4;
+  }
+}
