@@ -14,6 +14,10 @@ const Palette = {
   grey: '#BCAAA4',
   white: '#FFFFFF',
   black: '#000000',
+  // New colors for Kopi Maker UI
+  cream: '#F9F5F0', // Lighter background for top section
+  warmBeige: '#EFEBE9', // Slightly darker background for bottom section
+  accent: '#D4A017', // Gold/Condensed Milk accent
 };
 
 export const Colors = {
