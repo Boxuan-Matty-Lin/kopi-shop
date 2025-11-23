@@ -3,21 +3,21 @@ export const optionGroups = {
   milkiness: ["none", "condensed", "evaporated"],
   sweetness: ["no_sugar", "less_sweet", "normal", "sweeter"],
   strength: ["weak", "normal", "strong", "stronger_no_water"],
-  state: ["warm", "lukewarm", "iced"],
+  temperature: ["warm", "lukewarm", "iced"],
 } as const;
 
 // Define TypeScript types based on the option groups
 export type Milkiness = (typeof optionGroups.milkiness)[number];
 export type Sweetness = (typeof optionGroups.sweetness)[number];
 export type Strength = (typeof optionGroups.strength)[number];
-export type State = (typeof optionGroups.state)[number];
+export type Temperature = (typeof optionGroups.temperature)[number];
 
 // Define a type for a complete kopi selection
 export type KopiSelection = {
   milkiness: Milkiness;
   sweetness: Sweetness;
   strength: Strength;
-  state: State;
+  temperature: Temperature;
 };
 
 // Example default kopi selection
@@ -25,7 +25,7 @@ export const DEFAULT_SELECTION: KopiSelection = {
   milkiness: "condensed",
   sweetness: "normal",
   strength: "normal",
-  state: "warm",
+  temperature: "warm",
 };
 
 // Define a generic option item type
@@ -56,12 +56,11 @@ export const STRENGTH_OPTIONS: OptionItem<Strength>[] = [
   { code: "stronger_no_water", label: "Stronger, no water", hint: "(Di Lo)" },
 ];
 
-export const STATE_OPTIONS: OptionItem<State>[] = [
+export const TEMPERATURE_OPTIONS: OptionItem<Temperature>[] = [
   { code: "warm", label: "Warm" },
   { code: "lukewarm", label: "Lukewarm", hint: "(Pua Sio)" },
   { code: "iced", label: "Iced", hint: "(Peng)" },
 ];
-
 
 
 

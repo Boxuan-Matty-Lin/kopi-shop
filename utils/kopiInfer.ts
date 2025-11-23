@@ -3,7 +3,7 @@ import type {
   Milkiness,
   Sweetness,
   Strength,
-  State,
+  Temperature,
   KopiSelection,
 } from "@/types/kopi";
 
@@ -30,12 +30,12 @@ export const STRENGTH_TO_SUFFIX = {
   stronger_no_water: "Di Lo",
 } as const satisfies Record<Strength, string>;
 
-// state -> suffix
-export const STATE_TO_SUFFIX = {
+// temperature -> suffix
+export const TEMPERATURE_TO_SUFFIX = {
   warm: "",
   lukewarm: "Pua Sio",
   iced: "Peng",
-} as const satisfies Record<State, string>;
+} as const satisfies Record<Temperature, string>;
 
 // Build the base name from a KopiSelection
 export function buildBaseName(sel: KopiSelection) {
@@ -49,7 +49,7 @@ export function buildOrderPhrase(sel: KopiSelection) {
   const parts = [
     base,
     STRENGTH_TO_SUFFIX[sel.strength],
-    STATE_TO_SUFFIX[sel.state],
+    TEMPERATURE_TO_SUFFIX[sel.temperature],
     SWEETNESS_TO_SUFFIX[sel.sweetness],
   ].filter(Boolean);
 
