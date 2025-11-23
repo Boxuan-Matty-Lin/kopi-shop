@@ -53,7 +53,7 @@ export const STRENGTH_OPTIONS: OptionItem<Strength>[] = [
   { code: "weak", label: "Weak", hint: "(Po)" },
   { code: "normal", label: "Normal" },
   { code: "strong", label: "Strong", hint: "(Gao)" },
-  { code: "stronger_no_water", label: "Stronger, no water", hint: "(Di Lo)" },
+  { code: "stronger_no_water", label: "No water", hint: "(Di Lo)" },
 ];
 
 export const TEMPERATURE_OPTIONS: OptionItem<Temperature>[] = [

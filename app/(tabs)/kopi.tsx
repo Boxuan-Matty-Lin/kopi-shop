@@ -1,5 +1,4 @@
-import { KopiCupPreview } from "@/components/kopi/KopiCupPreview";
-import { OptionSelector } from "@/components/kopi/OptionSelector";
+import { KopiCupPreview, OptionSelector } from "@/components/kopi";
 import { useKopiMakerStore } from "@/stores/kopiMakerStore";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
@@ -9,7 +8,6 @@ import {
   SWEETNESS_OPTIONS,
   TEMPERATURE_OPTIONS,
 } from "@/types/kopi";
-import React from "react";
 import { Dimensions, Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
@@ -19,17 +17,15 @@ const CURVE_DEPTH = 50;
 const SVG_H = CURVE_HEIGHT + CURVE_DEPTH;
 
 export default function KopiScreen() {
-  const {
-    milkiness,
-    sweetness,
-    strength,
-    temperature,
-    setMilkiness,
-    setSweetness,
-    setStrength,
-    setTemperature,
-    displayName,
-  } = useKopiMakerStore();
+  const milkiness = useKopiMakerStore((s) => s.milkiness);
+  const sweetness = useKopiMakerStore((s) => s.sweetness);
+  const strength = useKopiMakerStore((s) => s.strength);
+  const temperature = useKopiMakerStore((s) => s.temperature);
+  const setMilkiness = useKopiMakerStore((s) => s.setMilkiness);
+  const setSweetness = useKopiMakerStore((s) => s.setSweetness);
+  const setStrength = useKopiMakerStore((s) => s.setStrength);
+  const setTemperature = useKopiMakerStore((s) => s.setTemperature);
+  const phrase = useKopiMakerStore((s) => s.phrase());
 
   const colorScheme = useColorScheme() ?? "light";
   const topBg = Colors[colorScheme].background;
@@ -38,7 +34,7 @@ export default function KopiScreen() {
     <View className="flex-1 bg-warm-beige">
       {/* Top Section: Preview (40%) */}
       <View style={{ flex: 0.4, zIndex: 2, backgroundColor: topBg }}>
-        <KopiCupPreview name={displayName()} />
+        <KopiCupPreview name={phrase} />
 
         {/* 微笑曲线分界 */}
 
@@ -106,7 +102,7 @@ export default function KopiScreen() {
       <View className="absolute bottom-8 left-0 right-0 px-6">
         <Pressable
           className="bg-dark-coffee py-4 rounded-2xl items-center shadow-lg active:opacity-90"
-          onPress={() => console.log("Brewing:", displayName())}
+          onPress={() => console.log("Brewing:", phrase)}
         >
           <Text className="text-white text-xl font-bold tracking-wider">
             BREW
